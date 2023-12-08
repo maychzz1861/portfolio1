@@ -7,8 +7,6 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <style>
-   
-/* Your existing styles */
 body, html {
   height: 100%;
   margin: 0;
@@ -191,27 +189,21 @@ h4 {
   left: 50%; /* ตำแหน่งจากซ้ายของ container */
   transform: translateX(200%); /* ย้ายไอคอนทวิตเตอร์ไปทางขวา */
 }
-
-
-
 </style>
-
+</head>
 <body>
+  <div class="logo">
+    <h4>CHAVEEWAN</h4>
+  </div>
+  <div class="line-container">
+    <div class="horizontal-line top-line"></div>
+    <div class="horizontal-line bottom-line"></div>
+  </div>
+
+  <i class="fab fa-facebook-f"></i>
+  <i class="fab fa-instagram"></i>
+  <i class="fab fa-twitter"></i>
   
- 
- <div class="logo">
-  <h4>CHAVEEWAN</h4>
-
-
-</div>
-<div class="line-container">
-  <div class="horizontal-line top-line"></div>
-  <div class="horizontal-line bottom-line"></div>
-</div>
-
-<i class="fab fa-facebook-f"></i>
-<i class="fab fa-instagram"></i>
-<i class="fab fa-twitter"></i>
   <div class="card-content">
     <div class="video-container">
       <video autoplay muted loop class="blackout">
@@ -220,44 +212,28 @@ h4 {
     </div>
   </div>
   
-    <div class="card">
-      <div class="content">
-    
-        <span style="font-size: 4em; ">H</span><span style="font-size: 4em;">e</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">o</span><span style="font-size: 4em;">!</span><br>
-<span style="margin-top: 30px; ">I</span><span>'</span><span>m</span><span>&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">v</span><span style="color: blue;">e</span><span style="color: blue;">e</span><span style="color: blue;">w</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">y</span><span style="color: blue;">a</span><span style="color: blue;">s</span><span style="color: blue;">r</span><span style="color: blue;">i</span>
-
-
-        <br>
-        <a href="About.html" style="margin-top: 40px;">
-          <button style="position: fixed;">SEE PORTFOLIO</button>
-        </a>
-
-          
-
-        </div>
-        
-      </div>
+  <div class="card">
+    <div class="content">
+      <span style="font-size: 4em;">H</span><span style="font-size: 4em;">e</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">o</span><span style="font-size: 4em;">!</span><br>
+      <span style="margin-top: 30px;">I</span><span>'</span><span>m</span><span>&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">v</span><span style="color: blue;">e</span><span style="color: blue;">e</span><span style="color: blue;">w</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">y</span><span style="color: blue;">a</span><span style="color: blue;">s</span><span style="color: blue;">r</span><span style="color: blue;">i</span><br>
+      <a href="About.html" style="margin-top: 40px;">
+        <button>SEE PORTFOLIO</button>
+      </a>
     </div>
+  </div>
+  
+  <script>
+    window.onload = function() {
+      const video = document.querySelector('video');
+      video.style.width = '100%';
+      video.style.height = '100%';
+      video.style.objectFit = 'cover';
+    };
     
-<script>
-  window.onload = function() {
-    const video = document.querySelector('video');
-    video.style.width = '100%';
-    video.style.height = '100%';
-    video.style.objectFit = 'cover';
-    video.style.position = 'fixed';
-    video.style.position = 'reality';
-    video.style.top = '0';
-  };
-// JavaScript
-const spans = document.querySelectorAll('.card .content span');
-
-spans.forEach((span, index) => {
-  span.style.animationDelay = `${index * 0.1}s`;
-});
-
-
-</script>
-
+    const spans = document.querySelectorAll('.card .content span');
+    spans.forEach((span, index) => {
+      span.style.animationDelay = `${index * 0.1}s`;
+    });
+  </script>
 </body>
 </html>
