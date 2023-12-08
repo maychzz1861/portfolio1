@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+   
+/* Your existing styles */
+body, html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ... your other styles ... */
+
+    .video-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .blackout {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      opacity: 100; /* ปรับความโปร่งใสของแบล็กกราวตามต้องการ */
+      z-index: -1;
+    }
+
+    .get-start-button {
+  position: absolute;
+  top: 70%;
+  right: 350px; 
+  transform: translate(-50%, -50%);
+  padding: 5px 50px;
+  text-decoration: none;
+  font-weight: bold;
+  border: 2px solid #333;
+  border-radius: 5px;
+  z-index: 1;
+  
+}
+
+.card {
+  /* Your existing styles */
+  transform: translateX(350px); 
+  background-color: rgba(114, 100, 100, 0.334); 
+  width: 500px; 
+  height: 310px; 
+  position: fixed;
+}
+
+
+.card .content span {
+  user-select: none;
+  opacity: 0;
+  display: inline-block;
+  animation: appearAnimation 0.5s forwards;
+  font-weight: bold; /* เปลี่ยนให้ตัวอักษรหนาขึ้น */
+  font-family:serif;
+  color: rgb(236, 227, 227); /* เปลี่ยนสีเป็นสีขาว */
+  padding: 1px; /* เพิ่ม padding สำหรับเพิ่มพื้นที่รอบตัวอักษร */
+  font-size: 34px; /* ปรับขนาดตัวอักษรใหญ่ขึ้น */
+  text-shadow: 2px 2px 4px rgba(250, 240, 240, 0.97); /* เพิ่มเงาให้กับตัวอักษร */
+}
+
+
+/* Animation for the text */
+@keyframes appearAnimation {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Delay each character's animation */
+.card .content span:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.card .content span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+button {
+    background: linear-gradient(to bottom, rgb(41, 50, 171), rgb(0, 195, 255));
+    color: rgb(212, 195, 195);
+    border: none;
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    width: 150px;
+    position: fixed;
+    left: 175px;
+    margin-top: 38px;
+}
+
+button:hover {
+    background: linear-gradient(to bottom, rgb(23, 23, 189), rgb(36, 130, 162));
+}
+.logo {
+  position: fixed;
+  top: 20px;
+  left: 5%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  position: fixed;
+}
+
+h4 {
+  margin-top: -5px;
+  position: fixed;
+}
+.card-content {
+  position: relative; 
+}
+
+.video-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: -1; 
+}
+.line-container {
+  position: fixed; /* ใช้ position: fixed เพื่อให้เส้นติดอยู่ในตำแหน่งเดิมและไม่เลื่อนไปตามการเลื่อนหน้าจอ */
+  top: 50%; 
+  width: 160vw;
+}
+
+.horizontal-line {
+  width: 100%;
+  border-top: 1px solid rgba(218, 206, 206, 0.732);
+  position: fixed;
+}
+
+.top-line {
+  top: 0px; /* กำหนดให้เส้นอยู่ที่ด้านบนของ container */
+}
+
+.bottom-line {
+  bottom: 0; /* กำหนดให้เส้นอยู่ที่ด้านล่างของ container */
+}
+.buttons {
+  display: flex; /* จัดเรียงปุ่มในแนวนอน */
+}
+
+
+.horizontal-line {
+  position: fixed;
+  position: absolute;
+  width: 100%; /* ทำให้เส้นขีดยาวเต็มความกว้างของ container */
+  border-top: 1px solid rgba(206, 129, 129, 0.732);
+}
+
+.top-line {
+  transform: translateY(-39000%); /* ขยับเส้นไปด้านบน */
+}
+
+.bottom-line {
+  transform: translateY(39000%); /* ขยับเส้นไปด้านล่าง */
+}
+.fab {
+  position: fixed; /* ทำให้ไอคอนอยู่ในตำแหน่งเดิมและไม่ขยับ */
+  bottom: 20px; /* ตำแหน่งของไอคอนจากด้านล่าง */
+}
+
+.fa-facebook-f {
+  left: 50%; /* ตำแหน่งจากซ้ายของ container */
+  transform: translateX(-370%); /* ย้ายไอคอนเฟซบุ๊คไปทางซ้าย */
+}
+
+.fa-instagram {
+  left: 50%; /* ตำแหน่งจากซ้ายของ container */
+  transform: translateX(-50%); /* จัดให้ไอคอนอยู่กึ่งกลาง */
+}
+
+.fa-twitter {
+  left: 50%; /* ตำแหน่งจากซ้ายของ container */
+  transform: translateX(200%); /* ย้ายไอคอนทวิตเตอร์ไปทางขวา */
+}
+
+
+
+</style>
+
+<body>
+  
+ 
+ <div class="logo">
+  <h4>CHAVEEWAN</h4>
+
+
+</div>
+<div class="line-container">
+  <div class="horizontal-line top-line"></div>
+  <div class="horizontal-line bottom-line"></div>
+</div>
+
+<i class="fab fa-facebook-f"></i>
+<i class="fab fa-instagram"></i>
+<i class="fab fa-twitter"></i>
+  <div class="card-content">
+    <div class="video-container">
+      <video autoplay muted loop class="blackout">
+        <source src="picture/kanao-tsuyuri-butterfly-kimetsu-no-yaiba-moewalls-com.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+  
+    <div class="card">
+      <div class="content">
+    
+        <span style="font-size: 4em; ">H</span><span style="font-size: 4em;">e</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">l</span><span style="font-size: 4em;">o</span><span style="font-size: 4em;">!</span><br>
+<span style="margin-top: 30px; ">I</span><span>'</span><span>m</span><span>&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">v</span><span style="color: blue;">e</span><span style="color: blue;">e</span><span style="color: blue;">w</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">&nbsp;</span><span style="color: blue;">C</span><span style="color: blue;">h</span><span style="color: blue;">a</span><span style="color: blue;">n</span><span style="color: blue;">y</span><span style="color: blue;">a</span><span style="color: blue;">s</span><span style="color: blue;">r</span><span style="color: blue;">i</span>
+
+
+        <br>
+        <a href="About.html" style="margin-top: 40px;">
+          <button style="position: fixed;">SEE PORTFOLIO</button>
+        </a>
+
+          
+
+        </div>
+        
+      </div>
+    </div>
+    
+<script>
+  window.onload = function() {
+    const video = document.querySelector('video');
+    video.style.width = '100%';
+    video.style.height = '100%';
+    video.style.objectFit = 'cover';
+    video.style.position = 'fixed';
+    video.style.position = 'reality';
+    video.style.top = '0';
+  };
+// JavaScript
+const spans = document.querySelectorAll('.card .content span');
+
+spans.forEach((span, index) => {
+  span.style.animationDelay = `${index * 0.1}s`;
+});
+
+
+</script>
+
+</body>
+</html>
